@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel App</title>
+</head>
+<body>
+  <header>
+    <h1>Travel Planner</h1>
+  </header>
+
+  <main>
+    <section id="search">
+      <h2>Plan Your Trip</h2>
+      <p> Please enter the location for your next trip.</p>
+      <form id="trip-form">
+        <label for="destination">Destination:</label>
+        <input type="text" id="destination" required placeholder="Enter your destination"><br>
+        <p>Please select the date for yur next trip.</p>
+        <label for="date">Date:</label>
+        <input type="date" id="date" required><br>
+        <button type="submit">Get Trip Details</button>
+      </form>
+    </section>
+
+    <section id="trip-details">
+      <h2>Your Trip Details</h2>
+      <div id="destination-info">
+        <h3 id="destination-name"></h3>
+        <p id="destination-date"></p>
+        <p id="destination-weather"></p>
+        <img id="destination-image" src="">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Travel App for Udacity Project</p>
+  </footer>
+</body>
+</html>

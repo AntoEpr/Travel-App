@@ -6,7 +6,7 @@ const postUrl = 'http://localhost:5500/data';
 // Add event listener for 'generate' button
 document.getElementById('generate').addEventListener('click', performAction);
 
-async function performAction() {
+export async function performAction() {
     // Retrieve zip code and user feelings
     const zipCode = document.getElementById('zip').value;
     const feelings = document.getElementById('feelings').value;
@@ -43,7 +43,7 @@ async function performAction() {
 }
 
 // Async function to make the GET request to OpenWeatherMap API
-async function getWeatherData(lat, lon) {
+export async function getWeatherData(lat, lon) {
     // Construct the API URL with latitude and longitude
     const apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
 
@@ -66,7 +66,7 @@ async function getWeatherData(lat, lon) {
         throw error;
     }
 }
-async function getWeatherDataByZip(zipCode) {
+export async function getWeatherDataByZip(zipCode) {
     // Construct the API URL with zip code (only US)
     const apiUrl = `${baseUrl}?zip=${zipCode},US&appid=${apiKey}`;
 
@@ -90,7 +90,7 @@ async function getWeatherDataByZip(zipCode) {
     }
 }
 // Async function to make the POST request and receive the updated data
-async function postData(url = '', data = {}) {
+export async function postData(url = '', data = {}) {
     const response = await fetch(url, {
         method: 'POST',
         credentials: 'same-origin',
