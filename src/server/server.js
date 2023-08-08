@@ -73,10 +73,3 @@ app.post('/all', (req, res) => {
                 })
             })
         });
-
-// GET route to return projectData
-app.get('/all', getALL);
-
-function getALL(req, res) {
-    res.status(200).send(projectData);
-};

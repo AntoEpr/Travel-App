@@ -39,6 +39,7 @@ function handleSubmit(event) {
                     throw new Error('Request failed with status ' + response.status);
                 }
                 return response.json();
+                console.log ('step 5');
             })
             .then(data => {
                 // Display API data
@@ -61,11 +62,11 @@ function handleSubmit(event) {
 }
 
 //Don't forget to add preventDefault
-//in interiorul functiei cream variabile pentru datele introduse de client, data si destinatia
+//in interiorul functiei creem variabile pentru datele introduse de client, data si destinatia
 //optional aici vom adauga si data intoarcerii si vom face variabile ce vor folosi la calcularea lungimii calatoriei intr-un js separat pe care il vom numi tripLength
 //adaugam functii de validare pentru ca data intoarcerii sa fie dupa data plecarii
 //adaugam functii de validare pentru ca data plecarii sa fie dupa data de astazi
 //don't forget to import and export
 
 // Export handleSubmit
-export { handleSubmit };
+export { handleSubmit }
