@@ -1,3 +1,4 @@
+import { userInput } from './js/formHandler';
 import { performAction } from './js/app'
 import { getWeatherData} from './js/app'
 import { getWeatherDataByZip} from './js/app'
@@ -10,5 +11,6 @@ export{
     performAction,
     getWeatherData,
     getWeatherDataByZip,
-    postData
+    postData,
+    userInput,
 }
