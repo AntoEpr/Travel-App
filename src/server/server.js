@@ -1,8 +1,8 @@
 // Setup Server
+const fetch = require('node-fetch');
 const express = require('express');
 const app = express();
 const cors = require('cors');
-app.use(cors());
 
 // Dotenv Package (to setup environment variables)
 const dotenv = require('dotenv');
@@ -30,13 +30,6 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 });
 
-// Server Testing
-const mockAPIResponse = require('./mockAPI.js');
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-});
-
 // Setup empty JS object to act as endpoint for all routes
 let projectData = {};
 
@@ -53,7 +46,7 @@ app.post('/all', (req, res) => {
     .then (geonamesData => {
 
     // Weatherbit API Variable
-    const weatherbitAPIroute = `https://api.weatherbit.io/v2.0/forecast/daily?&lat=${geonamesData.geonames[0].lat}&lon=${geonamesData.geonames[0].lng}&key=${process.env.WEATHERBIT-API}`;
+    const weatherbitAPI = `https://api.weatherbit.io/v2.0/forecast/daily?&lat=${geonamesData.geonames[0].lat}&lon=${geonamesData.geonames[0].lng}&key=${process.env.WEATHERBIT-API}`;
 
     //Weatherbit Data
     fetch (weatherbitAPI)
@@ -73,3 +66,10 @@ app.post('/all', (req, res) => {
                 })
             })
         });
+
+// Server Testing
+const mockAPIResponse = require('./mockAPI.js');
+
+app.get('/test', function (req, res) {
+    res.send(mockAPIResponse)
+});
