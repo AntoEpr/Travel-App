@@ -1,14 +1,11 @@
-function handleSubmit(event) {
-    // Prevent the form from submitting
-    event.preventDefault();
-
+export function handleSubmit(event) {
     // Event listener for submit button
     const userInput = document.getElementById('button');
 
     // Debugging
     console.log("Checking handleSubmit");
 
-    userInput.addEventListener('click', () => {
+    userInput.addEventListener('click', (event) => {
         event.preventDefault();
 
         // Input variables
@@ -18,7 +15,7 @@ function handleSubmit(event) {
         // Validation for date field
         if (departureDate.length === 0 || destination.length === 0) {
             alert('Departure date and destination are required.');
-            return;
+            console.log("here")
         }
 
         // Debug
@@ -38,7 +35,6 @@ function handleSubmit(event) {
                 if (!response.ok) {
                     throw new Error('Request failed with status ' + response.status);
                 }
-                return response.json();
                 console.log ('step 5');
             })
             .then(data => {
@@ -68,5 +64,3 @@ function handleSubmit(event) {
 //adaugam functii de validare pentru ca data plecarii sa fie dupa data de astazi
 //don't forget to import and export
 
-// Export handleSubmit
-export { handleSubmit }

@@ -1,5 +1,5 @@
 // Setup Server
-const fetch = require('node-fetch');
+import('node-fetch').then(({ default: fetch }) => {
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -73,3 +73,4 @@ const mockAPIResponse = require('./mockAPI.js');
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 });
+})
