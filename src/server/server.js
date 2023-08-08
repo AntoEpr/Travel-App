@@ -72,12 +72,7 @@ app.post('/all', (req, res) => {
                     })
                 })
             })
-        })
-    
-        .catch (err => {
-            res.send(err);
         });
-
 
 // GET route to return projectData
 app.get('/all', getALL);

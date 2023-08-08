@@ -1,5 +1,5 @@
 //Event listener for submit button
-const userInput = document.getElementById('submit')
+const userInput = document.getElementById('button')
 userInput.addEventListener('click', ()=>{
     preventDefault();
 
