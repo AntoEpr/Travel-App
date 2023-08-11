@@ -1,12 +1,12 @@
+import {calculateTripLength} from './js/tripDuration'
 import {calculateDaysLeft} from './js/daysLeft'
-import {myFunction} from './js/myFunction'
-import { userInput } from './js/formHandler'
+import {myFunction} from './js/formHandler'
 import './styles/base.scss'
 import './styles/form.scss'
 import './styles/header.scss'
 import './styles/footer.scss'
 export{
-    userInput,
+    calculateTripLength,
     myFunction,
     calculateDaysLeft
 }
