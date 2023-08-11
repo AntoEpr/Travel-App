@@ -1,3 +1,4 @@
+import { calculateDaysLeft } from "./daysLeft";
 export async function myFunction(event) {
    event.preventDefault();
 
@@ -9,7 +10,17 @@ export async function myFunction(event) {
         departureDate: departureDate,
     };
 console.log(sendData)
-
+const calculateResult = calculateDaysLeft(departureDate)
+console.log(`Here is calculateResult: ${calculateResult}`)
+if (calculateResult <= 7 && calculateResult > 0){
+  console.log("Trip is within one week")
+}
+else if(calculateResult < 0){
+  console.log("Departure date can't be before today")
+  alert("Departure date can't be before today. Select another date")
+  return;
+}
+else{
     // Declaring postData before being used
     const postData = async (url = '', data) => {
       try{
@@ -67,7 +78,6 @@ const retrieveData = async (url='') =>{
           console.log('Error:', error);
           // Handle the error
       });
-
+    }
   }
-
 }

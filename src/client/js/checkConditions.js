@@ -1,3 +1,4 @@
+
 export function checkConditions(){
     if (encodedDestination ==="" || date ==="") {
         console.log("no destination or date input")
